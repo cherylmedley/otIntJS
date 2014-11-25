@@ -111,7 +111,7 @@ numEven += howManyArray[b];
 }
 else{}
 }
-document.getElementById("even").innerHTML = numEven;
+document.getElementById("even").textContent = numEven;
 };
 
 function odd(){
@@ -122,7 +122,7 @@ numOdd += howManyArray[b];
 }
 else{}
 }
-document.getElementById("odd").innerHTML = numOdd;
+document.getElementById("odd").textContent = numOdd;
 };
 
 function most(){
@@ -134,9 +134,12 @@ function most(){
 			}
 			else{}
 			if(greater===howManyArray.length-1){
-			document.getElementById("most").innerHTML = i+1;
+			var digit = i+1
+			document.getElementById("most").textContent = digit + " with " + howManyArray[i];
 			}
-			else{}
+			else{
+			/*	document.getElementById("most").textContent = "tie " + digit + " with " + howManyArray[i]; */
+			}
 		}
 	}
 
@@ -150,9 +153,11 @@ for(i=0;i<howManyArray.length;i++){
 			}
 			else{}
 			if(lesser===howManyArray.length-1){
-			document.getElementById("few").innerHTML = i+1;
+			document.getElementById("few").textContent = i+1 + " with " + howManyArray[i];
 			}
-			else{}
+			else{
+			
+			}
 		}
 	}
 };

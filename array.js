@@ -13,6 +13,8 @@ printArray();
 howManyEachPrint();
 even();
 odd();
+most();
+fewest();
 };
 
 function myRandom() {
@@ -123,3 +125,34 @@ else{}
 document.getElementById("odd").innerHTML = numOdd;
 };
 
+function most(){
+	for(i=0;i<howManyArray.length;i++){
+	var greater = 0;
+		for (b=0;b<howManyArray.length;b++){
+			if(howManyArray[i]>howManyArray[b]){
+				greater += 1;
+			}
+			else{}
+			if(greater===howManyArray.length-1){
+			document.getElementById("most").innerHTML = i+1;
+			}
+			else{}
+		}
+	}
+
+};
+function fewest(){
+for(i=0;i<howManyArray.length;i++){
+	var lesser = 0;
+		for (b=0;b<howManyArray.length;b++){
+			if(howManyArray[i]<howManyArray[b]){
+				lesser += 1;
+			}
+			else{}
+			if(lesser===howManyArray.length-1){
+			document.getElementById("few").innerHTML = i+1;
+			}
+			else{}
+		}
+	}
+};

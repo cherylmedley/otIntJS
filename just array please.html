@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<body onload="printArray(), even(), odd()">
+<p id="howMany">test</p>
+<h2>My Array</h2>
+<div id="arrayTableCont">
+<table id="arrayTable">
+</table>
+</div>
+<h2>My How Many Array</h2>
+<p id="how"></p>
+<div id="howTableCont">
+<table id="howTable">
+</table>
+</div>
+<h2>How Many Evens?</h2>
+<p id="evens"></p>
+<h2>How Many Odds?</h2>
+<p id="odds"></p>
+
+<script>
+
+var myArray = [1,1,2,3,2,1]
+var min = 1
+var max = 3
+
+var howManyEach = [];
+
+function howManyMakeArray(){
+
+for (i=min; i<(max+1); i++){
+var howMany = 0
+for (b=0;b<myArray.length;b++){
+	if (myArray[b] === i){
+	howMany += 1;
+	
+	}
+	else{
+	}
+	
+}
+howManyEach[i-1]=howMany
+}
+};
+
+
+function printArray(){
+howManyMakeArray();
+var container = document.getElementById("arrayTableCont")
+var table = document.getElementById("arrayTable");
+var tbody = document.createElement("tbody");
+var row = document.createElement("tr");
+for(i=0;i<myArray.length;i++){
+var cell = document.createElement("td");
+cell.textContent = myArray[i];
+row.appendChild(cell);
+}
+tbody.appendChild(row);
+table.appendChild(tbody);
+container.appendChild(table);
+var container = document.getElementById("howTableCont")
+var table = document.getElementById("howTable");
+var tbody = document.createElement("tbody");
+var thead = document.createElement("thead");
+var rHead = document.createElement("tr");
+var thL = document.createElement("th");
+var thR = document.createElement("th");
+thL.textContent = "Number";
+thR.textContent = "How Many"
+rHead.appendChild(thL);
+rHead.appendChild(thR);
+thead.appendChild(rHead);
+howTable.appendChild(thead);
+container.appendChild(howTable);
+for(i=0;i<howManyEach.length;i++){
+var row = document.createElement("tr");
+var cellL = document.createElement("td");
+cellL.textContent = i+1;
+row.appendChild(cellL);
+var cellR = document.createElement("td");
+cellR.textContent = howManyEach[i];
+row.appendChild(cellR);
+tbody.appendChild(row);
+}
+
+table.appendChild(tbody);
+container.appendChild(table);
+};
+
+function even(){
+var numEven = 0;
+for (b=0;b<howManyEach.length;b++){
+if((b+1)%2===0){
+numEven += howManyEach[b];
+}
+else{}
+}
+document.getElementById("evens").innerHTML = numEven;
+};
+
+function odd(){
+var numOdd = 0;
+for (b=0;b<howManyEach.length;b++){
+if((b+1)%2===1){
+numOdd += howManyEach[b];
+}
+else{}
+}
+document.getElementById("odds").innerHTML = numOdd;
+};
+
+</script>
+
+</body>
+</html>

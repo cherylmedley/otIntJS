@@ -111,7 +111,7 @@ numEven += howManyArray[b];
 }
 else{}
 }
-document.getElementById("even").textContent = numEven;
+document.getElementById("even").innerHTML = numEven;
 };
 
 function odd(){
@@ -122,7 +122,7 @@ numOdd += howManyArray[b];
 }
 else{}
 }
-document.getElementById("odd").textContent = numOdd;
+document.getElementById("odd").innerHTML = numOdd;
 };
 
 function most(){
@@ -133,6 +133,7 @@ function most(){
 				greater += 1;
 			}
 			else{}
+<<<<<<< HEAD
 			var digit = i+1
 			if(greater < howManyArray.length-1){
 			document.getElementById("most").textContent = "tie"
@@ -143,6 +144,12 @@ function most(){
 			
 			
 		
+=======
+			if(greater===howManyArray.length-1){
+			document.getElementById("most").innerHTML = i+1;
+			}
+			else{}
+>>>>>>> parent of 6a8c840... trying to make most() address ties
 		}
 	}
 
@@ -156,11 +163,9 @@ for(i=0;i<howManyArray.length;i++){
 			}
 			else{}
 			if(lesser===howManyArray.length-1){
-			document.getElementById("few").textContent = i+1 + " with " + howManyArray[i];
+			document.getElementById("few").innerHTML = i+1;
 			}
-			else{
-			
-			}
+			else{}
 		}
 	}
 };

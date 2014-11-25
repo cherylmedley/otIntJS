@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="printArray(), even(), odd()">
+<body onload="printArray(), even(), odd(), most(), fewest()">
 <p id="howMany">test</p>
 <h2>My Array</h2>
 <div id="arrayTableCont">
@@ -111,6 +111,13 @@ numOdd += howManyEach[b];
 else{}
 }
 document.getElementById("odds").innerHTML = numOdd;
+};
+
+function most(){
+document.getElementById("most").innerHTML = "most";
+};
+function fewest(){
+document.getElementById("few").innerHTML = "fewest";
 };
 
 </script>

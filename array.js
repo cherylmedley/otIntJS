@@ -134,6 +134,7 @@ function most(){
 			}
 			else{}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			var digit = i+1
 			if(greater < howManyArray.length-1){
 			document.getElementById("most").textContent = "tie"
@@ -145,10 +146,15 @@ function most(){
 			
 		
 =======
+=======
+>>>>>>> parent of 6a8c840... trying to make most() address ties
 			if(greater===howManyArray.length-1){
 			document.getElementById("most").innerHTML = i+1;
 			}
 			else{}
+<<<<<<< HEAD
+>>>>>>> parent of 6a8c840... trying to make most() address ties
+=======
 >>>>>>> parent of 6a8c840... trying to make most() address ties
 		}
 	}

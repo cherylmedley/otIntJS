@@ -133,13 +133,16 @@ function most(){
 				greater += 1;
 			}
 			else{}
-			if(greater===howManyArray.length-1){
 			var digit = i+1
-			document.getElementById("most").textContent = digit + " with " + howManyArray[i];
+			if(greater < howManyArray.length-1){
+			document.getElementById("most").textContent = "tie"
 			}
 			else{
-			/*	document.getElementById("most").textContent = "tie " + digit + " with " + howManyArray[i]; */
+			document.getElementById("most").textContent = digit + " with " + howManyArray[i];
 			}
+			
+			
+		
 		}
 	}
 

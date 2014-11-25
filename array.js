@@ -51,7 +51,7 @@ howManyArray[i-1]=howMany
 function printArray(){
 
 var container = document.getElementById("arrayTableCont")
-var table = document.getElementById("arrayTable");
+var table = document.createElement("table");
 var tbody = document.createElement("tbody");
 var row = document.createElement("tr");
 for(i=0;i<myArray.length;i++){

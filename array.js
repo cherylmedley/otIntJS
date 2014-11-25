@@ -111,7 +111,7 @@ numEven += howManyArray[b];
 }
 else{}
 }
-document.getElementById("even").innerHTML = numEven;
+document.getElementById("even").textContent = numEven;
 };
 
 function odd(){
@@ -122,7 +122,7 @@ numOdd += howManyArray[b];
 }
 else{}
 }
-document.getElementById("odd").innerHTML = numOdd;
+document.getElementById("odd").textContent = numOdd;
 };
 
 function most(){
@@ -133,41 +133,12 @@ function most(){
 				greater += 1;
 			}
 			else{}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-			var digit = i+1
-			if(greater < howManyArray.length-1){
-			document.getElementById("most").textContent = "tie"
-			}
-			else{
-			document.getElementById("most").textContent = digit + " with " + howManyArray[i];
-			}
-			
-			
-		
-=======
-=======
->>>>>>> parent of 6a8c840... trying to make most() address ties
-=======
->>>>>>> parent of 6a8c840... trying to make most() address ties
-=======
->>>>>>> parent of 6a8c840... trying to make most() address ties
 			if(greater===howManyArray.length-1){
-			document.getElementById("most").innerHTML = i+1;
+			document.getElementById("most").textContent = i+1 + " with " + howManyArray[i];
 			}
 			else{}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 6a8c840... trying to make most() address ties
-=======
->>>>>>> parent of 6a8c840... trying to make most() address ties
-=======
->>>>>>> parent of 6a8c840... trying to make most() address ties
-=======
->>>>>>> parent of 6a8c840... trying to make most() address ties
+
+
 		}
 	}
 
@@ -181,7 +152,7 @@ for(i=0;i<howManyArray.length;i++){
 			}
 			else{}
 			if(lesser===howManyArray.length-1){
-			document.getElementById("few").innerHTML = i+1;
+			document.getElementById("few").textContent = i+1 + " with " + howManyArray[i];
 			}
 			else{}
 		}

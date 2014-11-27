@@ -17,12 +17,6 @@ function onClick() {
     fewest();
 };
 
-function myRandom() {
-    var rnd = Math.random() * max;
-    var fin = Math.floor((rnd) + 1);
-    return fin
-}
-
 function myRndArray() {
 
     var userX = Math.round(prompt("Please enter the number of random numbers you'd like returned"));
@@ -30,6 +24,14 @@ function myRndArray() {
         myArray[i] = myRandom();
     }
 };
+
+function myRandom() {
+    var rnd = Math.random() * max;
+    var fin = Math.floor((rnd) + 1);
+    return fin
+}
+
+
 
 function howManyMakeArray() {
 

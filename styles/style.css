@@ -1,0 +1,28 @@
+table {
+    text-align: center;
+    vertical-align: middle;
+    border: solid;
+    border-collapse: collapse;
+}
+thead {
+    border: solid;
+    vertical-align: bottom;
+    font-size: 14pt;
+}
+th, td {
+    padding: 10px;
+    border-right: solid;
+}
+td {
+    border-bottom: solid thin;
+}
+
+
+ul.unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+ul.unstyled li {
+    display: inline;
+    padding: 5px;
+}

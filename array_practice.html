@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Practice</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+</head>
+<body>
+
+    <h1>JavaScript Problem Set</h1>
+    <p>I'm learning JavaScript by answering the OpenTempo interview problems.</p>
+    <ol>
+        <li>Fill an array with random numbers between 1 and 10, allowing the user to select how many random numbers they'd like to generate.</li>
+        <li>Then write a program to find out how many of each number are in the array and display the results to the user.</li>
+        <li>Provide the additional statistics for the number with the most instances, the fewest instances and the number of even and odd numbers generated.</li>
+    </ol>
+
+    <label for="NumberOfRandomElements">Number of Random Elements: </label>
+    <input type="number" id="NumberOfRandomElements"/>
+
+    <h2>Random Number Array</h2>
+    <div id="arrayTableContainer"></div>
+
+
+    <h2>How many of each number are in the array:</h2>
+    <div id="numTable"></div>
+
+
+    <h2>Additional Statistics:</h2>
+    <table id="stats">
+        <thead>
+            <tr>
+                <th>Statistic</th>
+                <th>How Many</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Most Instances</td>
+            <td id="most"></td>
+        </tr>
+        <tr>
+            <td>Fewest Instances</td>
+            <td id="few"></td>
+        </tr>
+        <tr>
+            <td>Even</td>
+            <td id="even"></td>
+        </tr>
+        <tr>
+            <td>Odd</td>
+            <td id="odd"></td>
+        </tr>
+    </table>
+
+
+    <p id="evens"></p>
+    <p id="odds"></p>
+
+    <script src="scripts/ArrayFuntions.js"></script>
+    <script src="scripts/array_practice.js"></script>
+</body>
+</html>

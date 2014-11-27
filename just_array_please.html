@@ -41,7 +41,8 @@
             var howManyArray = howManyMakeArray(minValue, maxValue, myArray);
 
             // utilize array
-            printArray(myArray, howManyArray);
+            printMyArray(myArray);
+            printArray(howManyArray);
             even(howManyArray);
             odd(howManyArray);
             most(howManyArray);
@@ -53,24 +54,25 @@
         function howManyMakeArray(min, max, myArray) {
             var howManyArray = [];
 
-            for (var i = min; i < max + 1; i++) {
-                var howMany = 0;
+            // go though lowest to highest number
+            for (var i = min; i <= max; i++) {
+                var howManyTimesDoesTheValueOccur = 0;
+
                 for (var j = 0; j < myArray.length; j++) {
                     if (myArray[j] === i) {
-                        howMany += 1;
+                        howManyTimesDoesTheValueOccur += 1;
                     }
                 }
-                howManyArray[i - 1] = howMany;
+                howManyArray[i - 1] = howManyTimesDoesTheValueOccur;
             }
 
             return howManyArray;
         };
 
-
-        function printArray(myArray, howManyArray) {
-
+        function printMyArray(myArray) {
             var container = document.getElementById("arrayTableCont");
             var table = document.getElementById("arrayTable");
+
             var tbody = document.createElement("tbody");
             var row = document.createElement("tr");
             for (i = 0; i < myArray.length; i++) {
@@ -80,10 +82,15 @@
             }
             tbody.appendChild(row);
             table.appendChild(tbody);
-            container.appendChild(table);
 
+            container.appendChild(table);
+        }
+
+
+        function printArray(howManyArray) {
             var container = document.getElementById("howTableCont");
             var table = document.getElementById("howTable");
+
             var tbody = document.createElement("tbody");
             var thead = document.createElement("thead");
             var rHead = document.createElement("tr");

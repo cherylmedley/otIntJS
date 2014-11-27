@@ -4,34 +4,38 @@
     var maxValue = 3;
 
     // build array
-    var howManyArray = howManyMakeArray(minValue, maxValue, myArray);
+    var numberOfInstancesArray = getArrayWithNumberOfInstances(minValue, maxValue, myArray);
 
     // update DOM
     document.getElementById("arrayTableContainer").appendChild(buildPrintMyArray(myArray));
-    document.getElementById("howTableContainer").appendChild(buildPrintArray(howManyArray));
-    document.getElementById("evens").innerHTML = getNumberOfEvenElementsInArray(howManyArray);
-    document.getElementById("odds").innerHTML = getNumberOfOddElementsInArray(howManyArray);
-    document.getElementById("most").innerHTML = getNumberWithMostInstances(howManyArray);
-    document.getElementById("few").innerHTML = getNumberWithFewestInstances(howManyArray);
+    document.getElementById("howTableContainer").appendChild(buildPrintArray(numberOfInstancesArray));
+    document.getElementById("evens").innerHTML = getNumberOfEvenElementsInArray(numberOfInstancesArray);
+    document.getElementById("odds").innerHTML = getNumberOfOddElementsInArray(numberOfInstancesArray);
+    document.getElementById("most").innerHTML = getNumberWithMostInstances(numberOfInstancesArray);
+    document.getElementById("few").innerHTML = getNumberWithFewestInstances(numberOfInstancesArray);
 }
 
 
-function howManyMakeArray(min, max, myArray) {
-    var howManyArray = [];
+function getArrayWithNumberOfInstances(min, max, myArray) {
+    var numberOfInstancesArray = [];
 
     // go though lowest to highest number
     for (var i = min; i <= max; i++) {
-        var howManyTimesDoesTheValueOccur = 0;
+        var numberOfInstances = 0;
 
         for (var j = 0; j < myArray.length; j++) {
             if (myArray[j] === i) {
-                howManyTimesDoesTheValueOccur += 1;
+                numberOfInstances += 1;
             }
         }
-        howManyArray[i - 1] = howManyTimesDoesTheValueOccur;
+
+        numberOfInstancesArray.push({
+            number: i,
+            instances: numberOfInstances
+        });
     }
 
-    return howManyArray;
+    return numberOfInstancesArray;
 };
 
 
@@ -51,7 +55,7 @@ function buildPrintMyArray(myArray) {
 }
 
 
-function buildPrintArray(howManyArray) {
+function buildPrintArray(numberOfInstancesArray) {
     // create elements
     var howTable = document.createElement("table");
     var tbody = document.createElement("tbody");
@@ -69,17 +73,17 @@ function buildPrintArray(howManyArray) {
     howTable.appendChild(thead);
 
     // build table body
-    for (var i = 0; i < howManyArray.length; i++) {
+    for (var i = 0; i < numberOfInstancesArray.length; i++) {
         var row = document.createElement("tr");
         var cellL = document.createElement("td");
         var cellR = document.createElement("td");
 
         // build first column
-        cellL.textContent = i + 1;
+        cellL.textContent = numberOfInstancesArray[i].number;
         row.appendChild(cellL);
 
         // buid second column
-        cellR.textContent = howManyArray[i];
+        cellR.textContent = numberOfInstancesArray[i].instances;
         row.appendChild(cellR);
 
         // add row to table body
@@ -91,34 +95,34 @@ function buildPrintArray(howManyArray) {
     return howTable;
 };
 
-function getNumberOfEvenElementsInArray(howManyArray) {
+function getNumberOfEvenElementsInArray(numberOfInstancesArray) {
     var numEven = 0;
 
-    for (var i = 0; i < howManyArray.length; i++) {
-        if ((i + 1) % 2 === 0) {
-            numEven += howManyArray[i];
+    for (var i = 0; i < numberOfInstancesArray.length; i++) {
+        if ((numberOfInstancesArray[i].number % 2) === 0) {
+            numEven += numberOfInstancesArray[i].instances;
         }
     }
     return numEven;
 };
 
-function getNumberOfOddElementsInArray(howManyArray) {
+function getNumberOfOddElementsInArray(numberOfInstancesArray) {
     var numOdd = 0;
 
-    for (var i = 0; i < howManyArray.length; i++) {
-        if ((i + 1) % 2 === 1) {
-            numOdd += howManyArray[i];
+    for (var i = 0; i < numberOfInstancesArray.length; i++) {
+        if ((numberOfInstancesArray[i].number) % 2 === 1) {
+            numOdd += numberOfInstancesArray[i].instances;
         }
     }
     return numOdd;
 };
 
-function getNumberWithMostInstances(howManyArray) {
+function getNumberWithMostInstances(numberOfInstancesArray) {
     var currentValue, currentNumber, maxValue, maxNumber;
 
-    for (var i = 0; i < howManyArray.length; i++) {
-        currentNumber = i + 1;
-        currentValue = howManyArray[i];
+    for (var i = 0; i < numberOfInstancesArray.length; i++) {
+        currentNumber = numberOfInstancesArray[i].number;
+        currentValue = numberOfInstancesArray[i].instances;
 
         // get first instance or most value
         if (typeof maxValue === 'undefined' ||
@@ -131,12 +135,13 @@ function getNumberWithMostInstances(howManyArray) {
     return maxNumber;
 };
 
-function getNumberWithFewestInstances(howManyArray) {
+function getNumberWithFewestInstances(numberOfInstancesArray) {
     var currentValue, currentNumber, minValue, minNumber;
 
-    for (var i = 0; i < howManyArray.length; i++) {
-        currentNumber = i + 1;
-        currentValue = howManyArray[i];
+    for (var i = 0; i < numberOfInstancesArray.length; i++) {
+
+        currentNumber = numberOfInstancesArray[i].number;
+        currentValue = numberOfInstancesArray[i].instances;
 
         // get first or least value
         if (typeof minValue === 'undefined' ||

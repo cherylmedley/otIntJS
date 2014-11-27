@@ -1,12 +1,8 @@
 ﻿window.onload = function () {
-    var myArray = [1, 1, 3, 3, 3, 2];
+    var myArray = [1, 1, 3, 3, 3, 2, 5];
 
-    // find min / max values
-    var minValue = Math.min.apply(null, myArray);
-    var maxValue = Math.max.apply(null, myArray);
-
-    // build array
-    var numberOfInstancesArray = getArrayWithNumberOfInstances(minValue, maxValue, myArray);
+    // build array with count of instances
+    var numberOfInstancesArray = getArrayWithNumberOfInstances(myArray);
 
     // update DOM
     document.getElementById("arrayTableContainer").appendChild(buildPrintMyArray(myArray));
@@ -18,19 +14,25 @@
 }
 
 
-function getArrayWithNumberOfInstances(min, max, myArray) {
+function getArrayWithNumberOfInstances(myArray) {
     var numberOfInstancesArray = [];
 
+    // find min / max values
+    var minValue = Math.min.apply(null, myArray);
+    var maxValue = Math.max.apply(null, myArray);
+
     // go though lowest to highest number
-    for (var i = min; i <= max; i++) {
+    for (var i = minValue; i <= maxValue; i++) {
         var numberOfInstances = 0;
 
+        // get number of instances
         for (var j = 0; j < myArray.length; j++) {
             if (myArray[j] === i) {
                 numberOfInstances += 1;
             }
         }
 
+        // add number and count to array
         numberOfInstancesArray.push({
             number: i,
             instances: numberOfInstances

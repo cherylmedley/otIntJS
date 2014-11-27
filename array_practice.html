@@ -7,9 +7,7 @@
 </head>
 <body>
 
-
     <h1>JavaScript Problem Set</h1>
-
     <p>I'm learning JavaScript by answering the OpenTempo interview problems.</p>
     <ol>
         <li>Fill an array with random numbers between 1 and 10, allowing the user to select how many random numbers they'd like to generate.</li>
@@ -17,14 +15,15 @@
         <li>Provide the additional statistics for the number with the most instances, the fewest instances and the number of even and odd numbers generated.</li>
     </ol>
 
-    <button onclick="onClick()">Click here to enter how many random numbers you'd like to create.</button>
-    <h2>Random Number Array</h2>
-    <div id="arrayTableCont">
-    </div>
-    <h2>How many of each number are in the array:</h2>
-    <div id="numTable">
 
-    </div>
+    <button onclick="onClick()">Click here to enter how many random numbers you'd like to create.</button>
+
+    <h2>Random Number Array</h2>
+    <div id="arrayTableCont"></div>
+
+
+    <h2>How many of each number are in the array:</h2>
+    <div id="numTable"></div>
 
 
     <h2>Additional Statistics:</h2>
@@ -52,6 +51,8 @@
             <td id="odd"></td>
         </tr>
     </table>
+
+
     <p id="evens"></p>
     <p id="odds"></p>
 

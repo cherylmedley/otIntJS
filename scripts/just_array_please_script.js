@@ -1,7 +1,9 @@
 ﻿window.onload = function () {
     var myArray = [1, 1, 3, 3, 3, 2];
-    var minValue = 1;
-    var maxValue = 3;
+
+    // find min / max values
+    var minValue = Math.min.apply(null, myArray);
+    var maxValue = Math.max.apply(null, myArray);
 
     // build array
     var numberOfInstancesArray = getArrayWithNumberOfInstances(minValue, maxValue, myArray);

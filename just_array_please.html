@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Just Array Elements</title>
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body onload="">
     <p id="howMany">test</p>
@@ -79,22 +80,17 @@
         }
         function buildPrintMyArray(myArray) {
             // create elements
-            var table = document.createElement('table');
-            var tbody = document.createElement("tbody");
-            var row = document.createElement("tr");
+            var list = document.createElement('ul');
+            list.className = "unstyled";
 
-            // build table
+            // build list
             for (var i = 0; i < myArray.length; i++) {
-                var cell = document.createElement("td");
-                cell.textContent = myArray[i];
-                row.appendChild(cell);
+                var listItem = document.createElement("li");
+                listItem.innerHTML = myArray[i];
+                list.appendChild(listItem);
             }
 
-            // add elements to page
-            tbody.appendChild(row);
-            table.appendChild(tbody);
-
-            return table;
+            return list;
         }
 
 

@@ -24,6 +24,15 @@ td {
     border-bottom: solid thin;
 }
 
+ul.unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+ul.unstyled li {
+    display: inline;
+    padding: 5px;
+}
+
 /*
 
 <table style="text-align: center; vertical-align: middle; border-collapse: collapse; border: solid;">

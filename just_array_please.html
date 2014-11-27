@@ -37,9 +37,10 @@
             var maxValue = 3;
 
 
-            // marshall other methods
+            // build array
             var howManyArray = howManyMakeArray(minValue, maxValue, myArray);
 
+            // utilize array
             printArray(myArray, howManyArray);
             even(howManyArray);
             odd(howManyArray);
@@ -51,18 +52,17 @@
 
         function howManyMakeArray(min, max, myArray) {
             var howManyArray = [];
-            for (i = min; i < (max + 1) ; i++) {
+
+            for (var i = min; i < max + 1; i++) {
                 var howMany = 0;
-                for (b = 0; b < myArray.length; b++) {
-                    if (myArray[b] === i) {
+                for (var j = 0; j < myArray.length; j++) {
+                    if (myArray[j] === i) {
                         howMany += 1;
-
-                    } else {
                     }
-
                 }
                 howManyArray[i - 1] = howMany;
             }
+
             return howManyArray;
         };
 

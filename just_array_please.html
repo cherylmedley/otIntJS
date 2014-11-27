@@ -7,8 +7,8 @@
     <p id="howMany">test</p>
 
     <h2>My Array</h2>
-    <div id="arrayTableCont">
-        <table id="arrayTable"></table>
+    <div id="arrayTableContainer">
+     
     </div>
 
     <h2>My How Many Array</h2>
@@ -71,10 +71,15 @@
 
         function printMyArray(myArray) {
             // get page elements
-            var container = document.getElementById("arrayTableCont");
-            var table = document.getElementById("arrayTable");
+            var container = document.getElementById("arrayTableContainer");
 
+            var table = buildPrintMyArray(myArray);
+
+            container.appendChild(table);
+        }
+        function buildPrintMyArray(myArray) {
             // create elements
+            var table = document.createElement('table');
             var tbody = document.createElement("tbody");
             var row = document.createElement("tr");
 
@@ -88,7 +93,8 @@
             // add elements to page
             tbody.appendChild(row);
             table.appendChild(tbody);
-            container.appendChild(table);
+
+            return table;
         }
 
 

@@ -4,7 +4,8 @@ window.onload = function () {
 }
 
 function GenerateNumbers() {
-    var myArray = getRandomArray();
+    var numberOfRandom = document.getElementById("NumberOfRandomElements").value;
+    var myArray = getRandomArray(numberOfRandom);
 
     // build array with count of instances
     var numberOfInstancesArray = getArrayWithNumberOfInstances(myArray);
@@ -18,11 +19,12 @@ function GenerateNumbers() {
     document.getElementById("few").innerHTML = getNumberWithFewestInstances(numberOfInstancesArray);
 };
 
-function getRandomArray() {
+function getRandomArray(numberOfRandom) {
     var myArray = [];
-    var userX = Math.round(prompt("Please enter the number of random numbers you'd like returned"));
 
-    for (var i = 0; i < userX; i++) {
+    numberOfRandom = Math.round(numberOfRandom);
+
+    for (var i = 0; i < numberOfRandom; i++) {
         myArray[i] = getRandomNumber();
     }
 

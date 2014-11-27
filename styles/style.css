@@ -1,28 +1,22 @@
-#array-table {
-    border-style: hidden;
-}
-
 table {
     text-align: center;
     vertical-align: middle;
     border: solid;
     border-collapse: collapse;
 }
-
-th, td {
-    padding: 10px;
-    border-right: solid;
-}
-
 thead {
     border: solid;
     vertical-align: bottom;
     font-size: 14pt;
 }
-
+th, td {
+    padding: 10px;
+    border-right: solid;
+}
 td {
     border-bottom: solid thin;
 }
+
 
 ul.unstyled {
     list-style: none;
@@ -32,22 +26,3 @@ ul.unstyled li {
     display: inline;
     padding: 5px;
 }
-
-/*
-
-<table style="text-align: center; vertical-align: middle; border-collapse: collapse; border: solid;">
-	<tr style="vertical-align:bottom; border: solid thin">
-		<th style="border-bottom: solid thin; border-right:solid;">Number</th>
-		<th>How Many</th>
-	</tr>
-	<tr>
-		<td style="border: solid thin;">1</td>
-		<td><span id="howManyOnes"></span id></td>
-	</tr>
-	<tr>
-		<td>2</td>
-		<td><span id="howManyTwos"></span id></td>
-	</tr>
-</table>
-
-*/

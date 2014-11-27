@@ -1,11 +1,11 @@
 // add listeners on page load
 window.onload = function () {
-    document.getElementById("btnGenerateNumbers").addEventListener("click", GenerateNumbers);
+    document.getElementById("NumberOfRandomElements").addEventListener("keyup", GenerateNumbers);
+    document.getElementById("NumberOfRandomElements").addEventListener("mouseup", GenerateNumbers);
 }
 
 function GenerateNumbers() {
-    var numberOfRandom = document.getElementById("NumberOfRandomElements").value;
-    var myArray = getRandomArray(numberOfRandom);
+    var myArray = getRandomArray(this.value);
 
     // build array with count of instances
     var numberOfInstancesArray = getArrayWithNumberOfInstances(myArray);

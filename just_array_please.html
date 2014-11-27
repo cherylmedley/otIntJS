@@ -8,16 +8,12 @@
     <p id="howMany">test</p>
 
     <h2>My Array</h2>
-    <div id="arrayTableContainer">
-     
-    </div>
+    <div id="arrayTableContainer"></div>
 
     <h2>My How Many Array</h2>
     <p id="how"></p>
 
-    <div id="howTableCont">
-        <table id="howTable"></table>
-    </div>
+    <div id="howTableContainer"></div>
 
     <h2>Most Instances?</h2>
     <p id="most"></p>
@@ -37,13 +33,12 @@
             var minValue = 1;
             var maxValue = 3;
 
-
             // build array
             var howManyArray = howManyMakeArray(minValue, maxValue, myArray);
 
             // utilize array
-            printMyArray(myArray);
-            printArray(howManyArray);
+            document.getElementById("arrayTableContainer").appendChild(buildPrintMyArray(myArray));
+            document.getElementById("howTableContainer").appendChild(buildPrintArray(howManyArray));
             even(howManyArray);
             odd(howManyArray);
             most(howManyArray);
@@ -70,14 +65,7 @@
             return howManyArray;
         };
 
-        function printMyArray(myArray) {
-            // get page elements
-            var container = document.getElementById("arrayTableContainer");
 
-            var table = buildPrintMyArray(myArray);
-
-            container.appendChild(table);
-        }
         function buildPrintMyArray(myArray) {
             // create elements
             var list = document.createElement('ul');
@@ -94,35 +82,44 @@
         }
 
 
-        function printArray(howManyArray) {
-            var container = document.getElementById("howTableCont");
-            var table = document.getElementById("howTable");
-
+        function buildPrintArray(howManyArray) {
+            // create elements
+            var howTable = document.createElement("table");
             var tbody = document.createElement("tbody");
             var thead = document.createElement("thead");
             var rHead = document.createElement("tr");
             var thL = document.createElement("th");
             var thR = document.createElement("th");
+
+            // build table head
             thL.textContent = "Number";
             thR.textContent = "How Many";
             rHead.appendChild(thL);
             rHead.appendChild(thR);
             thead.appendChild(rHead);
             howTable.appendChild(thead);
-            container.appendChild(howTable);
-            for (i = 0; i < howManyArray.length; i++) {
+
+            // build table body
+            for (var i = 0; i < howManyArray.length; i++) {
                 var row = document.createElement("tr");
                 var cellL = document.createElement("td");
+                var cellR = document.createElement("td");
+
+                // build first column
                 cellL.textContent = i + 1;
                 row.appendChild(cellL);
-                var cellR = document.createElement("td");
+
+                // buid second column
                 cellR.textContent = howManyArray[i];
                 row.appendChild(cellR);
+
+                // add row to table body
                 tbody.appendChild(row);
             }
 
-            table.appendChild(tbody);
-            container.appendChild(table);
+            howTable.appendChild(tbody);
+
+            return howTable;
         };
 
         function even(howManyArray) {

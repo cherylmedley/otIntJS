@@ -1,4 +1,9 @@
-function onClick() {
+// add listeners on page load
+window.onload = function () {
+    document.getElementById("btnGenerateNumbers").addEventListener("click", GenerateNumbers);
+}
+
+function GenerateNumbers() {
     var myArray = getRandomArray();
 
     // build array with count of instances

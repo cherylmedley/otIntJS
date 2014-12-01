@@ -38,11 +38,7 @@ var howMany = 0
 for (b=0;b<myArray.length;b++){
 	if (myArray[b] === i){
 	howMany += 1;
-	
 	}
-	else{
-	}
-	
 }
 howManyArray[i-1]=howMany
 }
@@ -109,7 +105,6 @@ for (b=0;b<howManyArray.length;b++){
 if((b+1)%2===0){
 numEven += howManyArray[b];
 }
-else{}
 }
 document.getElementById("even").textContent = numEven;
 };
@@ -120,7 +115,6 @@ for (b=0;b<howManyArray.length;b++){
 if((b+1)%2===1){
 numOdd += howManyArray[b];
 }
-else{}
 }
 document.getElementById("odd").textContent = numOdd;
 };
@@ -132,13 +126,9 @@ function most(){
 			if(howManyArray[i]>howManyArray[b]){
 				greater += 1;
 			}
-			else{}
 			if(greater===howManyArray.length-1){
 			document.getElementById("most").textContent = i+1 + " with " + howManyArray[i];
 			}
-			else{}
-
-
 		}
 	}
 
@@ -150,11 +140,9 @@ for(i=0;i<howManyArray.length;i++){
 			if(howManyArray[i]<howManyArray[b]){
 				lesser += 1;
 			}
-			else{}
 			if(lesser===howManyArray.length-1){
 			document.getElementById("few").textContent = i+1 + " with " + howManyArray[i];
 			}
-			else{}
 		}
 	}
 };

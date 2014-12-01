@@ -43,13 +43,17 @@ function getArrayWithNumberOfInstances(min, max, myArray){
 	for (var i = min; i <= max; i++){
 		var numberOfInstances = 0;
 		
-		//cycle through each position j in the array to check for the value i
+		//get number of instances (cycle through each position j in the array to check for the value i)
 		for (var j = 0; j < myArray.length; j++){
 			if (myArray[j] === i){
 			 numberOfInstances += 1;
 			}
 		}
-	numberOfInstancesArray[i-1]= numberOfInstances;
+	//add number and count to array using objects instead of complicated position array silliness	
+	numberOfInstancesArray.push({
+		number: i,
+		instances: numberOfInstances;
+	});
 	}
 	return numberOfInstancesArray;
 };

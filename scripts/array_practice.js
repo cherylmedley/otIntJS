@@ -1,19 +1,21 @@
 //add listeners on page load
 window.onload = function () {
 	document.getElementById("NumberOfRandomElements").addEventListener("keyup",GenerateNumbers);
-	document.getElementById("NumberOfRandomElements").addEventListener("mouseup",GenerateNumbers);	document.getElementById("MinValue").addEventListener("keyup",GenerateNumbers);
+	document.getElementById("NumberOfRandomElements").addEventListener("mouseup",GenerateNumbers);	
+	/* tried to add min/max. didn't behave
+	document.getElementById("MinValue").addEventListener("keyup",GenerateNumbers);
 	document.getElementById("MinValue").addEventListener("mouseup",GenerateNumbers);	
 	document.getElementById("MaxValue").addEventListener("keyup",GenerateNumbers);
-	document.getElementById("MaxValue").addEventListener("mouseup",GenerateNumbers);
+	document.getElementById("MaxValue").addEventListener("mouseup",GenerateNumbers); */
 };
 
 function GenerateNumbers (){
-	var myArray = getRandomArray (this.value); //gathers random numbers	based on numberOfRandom from user
-	var min = document.getElementById("MinValue").value
-	var max = document.getElementById("MaxValue").value
+	var myArray = getRandomArray(this.value); //gathers random numbers	based on numberOfRandom from user
+	var min = 1
+	var max = 10
 	
 	//build array with count of instances
-	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);
+	var numberOfInstancesArray = getArrayWithNumberOfInstances(myArray);
 	
 	//updates to the DOM (pulling everything out that changes the HTML stuff)
 	
@@ -40,6 +42,7 @@ function getRandomArray(numberOfRandom){
 };
 
 function getRandomNumber() {
+	var max = 10;
     var rnd = Math.random() * max;
 	var fin = Math.floor((rnd)+1);
 	return fin

@@ -1,6 +1,8 @@
 
-function getArrayWithNumberOfInstances(min, max, myArray){
+function getArrayWithNumberOfInstances(myArray){
 	var numberOfInstancesArray = [];
+	var min = 1;
+	var max = 10;
 	
 	//check the array for instances of the lowest possible value to the highest possible value
 	for (var i = min; i <= max; i++){
@@ -36,6 +38,9 @@ function buildPrintMyArray(myArray){
 };
 
 function buildPrintArray(numberOfInstancesArray){
+	var min = 1;
+	var max = 10;
+
 	//create elements
 	var howTable = document.getElementById("table");
 	var tbody = document.createElement("tbody");
@@ -53,7 +58,7 @@ function buildPrintArray(numberOfInstancesArray){
 	howTable.appendChild(table);
 	
 	//build table body
-	for (i = min; i <= max; i++){
+	for (i = 0; i <= numberOfInstancesArray.length; i++){
 		var row = document.createElement("tr");
 		var cellL = document.createElement("td");
 		var cellR = document.createElement("td");
@@ -99,7 +104,6 @@ function getNumberOfOddElementsInArray(numberOfInstancesArray){
 };
 
 function getNumberWithMostInstances(numberOfInstancesArray){
-	var currentValue, currentNumber, maxCalue, maxNumber;
 
 	for(i = 0; i < numberOfInstancesArray.length; i++){
 	var greater = 0;

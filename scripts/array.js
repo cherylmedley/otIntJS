@@ -56,7 +56,7 @@ function getArrayWithNumberOfInstances(min, max, myArray){
 
 function printMyArray(myArray){
 
-	var container = document.getElementById("arrayTableCont")
+	var container = document.getElementById("arrayTableContainer")
 	var table = document.createElement("table");
 	
 	var tbody = document.createElement("tbody");

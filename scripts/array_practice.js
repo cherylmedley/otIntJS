@@ -1,32 +1,29 @@
 //add listeners on page load
 window.onload = function () {
+	document.getElementById("NumberOfRandomElements").addEventListener("keyup",GenerateNumbers);
+	document.getElementById("NumberOfRandomElements").addEventListener("mouseup",GenerateNumbers);
 
-
-var userX = 0 //myArray.length. This is a prompted value for how many random numbers the user wants.
-var min = 1 //could be a user prompted value. The minimum value for a random number
-var max = 10 //could be a user prompted value. The maximum value for a random number
-
-//pull all the methods together
-
-	//build array
-	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);
-
-	//print array
-	document.getElementById("arrayTableContainer").appendChild(buildPrintMyArray(myArray));
-	document.getElementById("howTableContainer").appendChild(buildPrintArray(numberOfInstancesArray));
-	
-	//array statistics
-	even(numberOfInstancesArray);
-	odd(numberOfInstancesArray);
-	most(numberOfInstancesArray);
-	fewest(numberOfInstancesArray);
 };
 
 function GenerateNumbers (){
-	var myArray = getRandomArray (); //gathers random numbers	
+	var myArray = getRandomArray (this.value); //gathers random numbers	based on numberOfRandom from user
+	var min = 1 //could be a user prompted value. The minimum value for a random number
+	var max = 10 //could be a user prompted value. The maximum value for a random number
 	
 	//build array with count of instances
-	var numberOfInstancesArray = getArrayWithNumberOfInstances(myArray);
+	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);
+	
+	//updates to the DOM (pulling everything out that changes the HTML stuff)
+	
+	//print the random numbers array, instances
+	document.getElementById("arrayTableContainer").innerHTML = buildPrintMyArray(myArray).outerHTML;
+	document.getElementById("howTableContainer").innerHTML = buildPrintArray(numberOfInstancesArray).outerHTML;
+	
+	//print random number array statistics
+	document.getElementById("even").innerHTML = getNumberOfEvenElementsInArray(numberOfInstancesArray);
+	document.getElementById("odd").innerHTML = getNumberOfOddElementsInArray(numberOfInstancesArray);
+	document.getElementById("most").innerHTML = getNumberWithMostInstances(numberOfInstancesArray);
+	document.getElementById("few").innerHTML = getNumberWithFewestInstances(numberOfInstancesArray);
 
 };
 

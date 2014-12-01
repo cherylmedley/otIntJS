@@ -13,7 +13,6 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 
 	//print array
 	printMyArray(myArray);
-	buildPrintArray(numberOfInstancesArray);
 	
 	//array statistics
 	even(numberOfInstancesArray);
@@ -59,7 +58,6 @@ function getArrayWithNumberOfInstances(min, max, myArray){
 };
 
 function printMyArray(myArray){
-
 	var container = document.getElementById("arrayTableContainer")
 	var table = buildPrintMyArray(myArray);
 	container.appendChild(table);
@@ -67,20 +65,16 @@ function printMyArray(myArray){
 
 function buildPrintMyArray(myArray){
 	//create elements
-	var table = document.createElement("table");
-	var tbody = document.createElement("tbody");
-	var row = document.createElement("tr");
-	for(i=0;i<myArray.length;i++){
-		var cell = document.createElement("td");
-		cell.textContent = myArray[i];
-		row.appendChild(cell);
+	var list = document.createElement("ul");
+	list.className = "unstyled";
+	
+	//build list
+	for(var i = 0; i < myArray.length; i++){
+		var listItem = document.createElement("td");
+		listItem.innerHTML = myArray[i];
+		list.appendChild(listItem);
 	}
-	
-	//add elements to the page
-	tbody.appendChild(row);
-	table.appendChild(tbody);
-	
-	return table;
+	return list;
 };
 
 function buildPrintArray(numberOfInstancesArray){

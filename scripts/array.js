@@ -39,8 +39,8 @@ function howManyMakeArray(min, max, myArray){
 	var howManyArray = [];
 	for (i=min; i<(max+1); i++){
 		var howMany = 0
-		for (b=0;b<myArray.length;b++){
-			if (myArray[b] === i){
+		for (j=0;j<myArray.length;j++){
+			if (myArray[j] === i){
 			howMany += 1;
 			}
 	}
@@ -101,9 +101,9 @@ container.appendChild(table);
 
 function even(){
 	var numEven = 0;
-	for (b=0;b<howManyArray.length;b++){
-		if((b+1)%2===0){
-		numEven += howManyArray[b];
+	for (i = 0;i < howManyArray.length;i++){
+		if((i + 1)%2===0){
+		numEven += howManyArray[i];
 		}
 	}
 	document.getElementById("even").textContent = numEven;
@@ -111,9 +111,9 @@ function even(){
 
 function odd(){
 	var numOdd = 0;
-	for (b=0;b<howManyArray.length;b++){
-		if((b+1)%2===1){
-		numOdd += howManyArray[b];
+	for (i = 0;i < howManyArray.length;i++){
+		if((i + 1)%2===1){
+		numOdd += howManyArray[i];
 		}
 	}
 	document.getElementById("odd").textContent = numOdd;

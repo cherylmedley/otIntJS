@@ -9,17 +9,17 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 //pull all the methods together
 
 	//build array
-	var howManyArray = getArrayWithNumberOfInstances(min, max, myArray);
+	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);
 
 	//print array
 	printMyArray(myArray);
-	printArray(howManyArray);
+	printArray(numberOfInstancesArray);
 	
 	//array statistics
-	even(howManyArray);
-	odd(howManyArray);
-	most(howManyArray);
-	fewest(howManyArray);
+	even(numberOfInstancesArray);
+	odd(numberOfInstancesArray);
+	most(numberOfInstancesArray);
+	fewest(numberOfInstancesArray);
 };
 
 function myRandom() {
@@ -37,7 +37,7 @@ var userX = Math.round(prompt("Please enter the number of random numbers you'd l
 };
 
 function getArrayWithNumberOfInstances(min, max, myArray){
-	var howManyArray = [];
+	var numberOfInstancesArray = [];
 	
 	//check the array for instances of the lowest possible value to the highest possible value
 	for (var i = min; i <= max; i++){
@@ -49,9 +49,9 @@ function getArrayWithNumberOfInstances(min, max, myArray){
 			 numberOfInstances += 1;
 			}
 		}
-	howManyArray[i-1]= numberOfInstances;
+	numberOfInstancesArray[i-1]= numberOfInstances;
 	}
-	return howManyArray;
+	return numberOfInstancesArray;
 };
 
 function printMyArray(myArray){
@@ -71,7 +71,7 @@ function printMyArray(myArray){
 	container.appendChild(table);
 };
 
-function printArray(howManyArray){
+function printArray(numberOfInstancesArray){
 	var container = document.getElementById("numTable");
 	var table = document.createElement("table");
 	var tbody = document.createElement("tbody");
@@ -94,7 +94,7 @@ function printArray(howManyArray){
 		row.appendChild(cellL);
 		//create cellR (integrate searching array function using a for loop based on userX)
 		var cellR = document.createElement("td");
-		cellR.textContent = howManyArray[i-1];
+		cellR.textContent = numberOfInstancesArray[i-1];
 		row.appendChild(cellR);
 		//attach row to tbody
 		tbody.appendChild(row);
@@ -107,9 +107,9 @@ container.appendChild(table);
 
 function even(){
 	var numEven = 0;
-	for (i = 0;i < howManyArray.length;i++){
+	for (i = 0;i < numberOfInstancesArray.length;i++){
 		if((i + 1)%2===0){
-		numEven += howManyArray[i];
+		numEven += numberOfInstancesArray[i];
 		}
 	}
 	document.getElementById("even").textContent = numEven;
@@ -117,37 +117,37 @@ function even(){
 
 function odd(){
 	var numOdd = 0;
-	for (i = 0;i < howManyArray.length;i++){
+	for (i = 0;i < numberOfInstancesArray.length;i++){
 		if((i + 1)%2===1){
-		numOdd += howManyArray[i];
+		numOdd += numberOfInstancesArray[i];
 		}
 	}
 	document.getElementById("odd").textContent = numOdd;
 };
 
 function most(){
-	for(i=0;i<howManyArray.length;i++){
+	for(i=0;i<numberOfInstancesArray.length;i++){
 	var greater = 0;
-		for (b=0;b<howManyArray.length;b++){
-			if(howManyArray[i]>howManyArray[b]){
+		for (b=0;b<numberOfInstancesArray.length;b++){
+			if(numberOfInstancesArray[i]>numberOfInstancesArray[b]){
 				greater += 1;
 			}
-			if(greater===howManyArray.length-1){
-			document.getElementById("most").textContent = i+1 + " with " + howManyArray[i];
+			if(greater===numberOfInstancesArray.length-1){
+			document.getElementById("most").textContent = i+1 + " with " + numberOfInstancesArray[i];
 			}
 		}
 	}
 
 };
 function fewest(){
-	for(i=0;i<howManyArray.length;i++){
+	for(i=0;i<numberOfInstancesArray.length;i++){
 		var lesser = 0;
-			for (b=0;b<howManyArray.length;b++){
-				if(howManyArray[i]<howManyArray[b]){
+			for (b=0;b<numberOfInstancesArray.length;b++){
+				if(numberOfInstancesArray[i]<numberOfInstancesArray[b]){
 					lesser += 1;
 				}
-				if(lesser===howManyArray.length-1){
-					document.getElementById("few").textContent = i+1 + " with " + howManyArray[i];
+				if(lesser===numberOfInstancesArray.length-1){
+					document.getElementById("few").textContent = i+1 + " with " + numberOfInstancesArray[i];
 				}
 			}
 	}

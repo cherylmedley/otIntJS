@@ -12,7 +12,8 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);
 
 	//print array
-	printMyArray(myArray);
+	document.getElementById("arrayTableContainer").appendChild(buildPrintMyArray(myArray));
+	document.getElementById("howTableContainer").appendChild(buildPrintArray(numberOfInstancesArray));
 	
 	//array statistics
 	even(numberOfInstancesArray);

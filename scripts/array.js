@@ -12,7 +12,8 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 	var howManyArray = howManyMakeArray(min, max, myArray);
 
 	//print array
-	printArray(myArray, howManyArray);
+	printMyArray(myArray);
+	printArray(howManyArray);
 	
 	//array statistics
 	even(howManyArray);
@@ -37,14 +38,18 @@ var userX = Math.round(prompt("Please enter the number of random numbers you'd l
 
 function howManyMakeArray(min, max, myArray){
 	var howManyArray = [];
-	for (i=min; i<(max+1); i++){
-		var howMany = 0
-		for (j=0;j<myArray.length;j++){
+	
+	//check the array from the lowest possible value to the highest possible value
+	for (var i = min; i <= max; i++){
+		var howManyTimesDoesTheValueOccur = 0;
+		
+		//cycle through each position j in the array to check for the value i
+		for (var j = 0; j < myArray.length; j++){
 			if (myArray[j] === i){
-			howMany += 1;
+			howManyTimesDoesTheValueOccur += 1;
 			}
-	}
-	howManyArray[i-1]=howMany
+		}
+	howManyArray[i-1]=howManyTimesDoesTheValueOccur;
 	}
 	return howManyArray;
 };

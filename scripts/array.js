@@ -6,7 +6,7 @@ var userX = 0 //myArray.length. This is a prompted value for how many random num
 var min = 1 //could be a user prompted value. The minimum value for a random number
 var max = 10 //could be a user prompted value. The maximum value for a random number
 
-//build array
+//pull all the methods together to build the array and print it
 var howManyArray = howManyMakeArray(min, max, myArray);
 	printArray(myArray, howManyArray);
 	even(howManyArray);
@@ -29,7 +29,8 @@ var userX = Math.round(prompt("Please enter the number of random numbers you'd l
 	}
 };
 
-function howManyMakeArray(){
+function howManyMakeArray(min, max, myArray){
+	var howManyArray = [];
 	for (i=min; i<(max+1); i++){
 		var howMany = 0
 		for (b=0;b<myArray.length;b++){
@@ -39,6 +40,7 @@ function howManyMakeArray(){
 	}
 	howManyArray[i-1]=howMany
 	}
+	return howManyArray;
 };
 
 function printArray(){

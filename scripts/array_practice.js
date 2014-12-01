@@ -5,13 +5,12 @@ window.onload = function () {
 	document.getElementById("MinValue").addEventListener("mouseup",GenerateNumbers);	
 	document.getElementById("MaxValue").addEventListener("keyup",GenerateNumbers);
 	document.getElementById("MaxValue").addEventListener("mouseup",GenerateNumbers);
-
 };
 
 function GenerateNumbers (){
 	var myArray = getRandomArray (this.value); //gathers random numbers	based on numberOfRandom from user
-	var min = MinValue
-	var max = MaxValue
+	var min = document.getElementById("MinValue").value
+	var max = document.getElementById("MaxValue").value
 	
 	//build array with count of instances
 	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);

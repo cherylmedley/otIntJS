@@ -1,3 +1,8 @@
+window.onload = function (){
+	document.getElementById("NumberOfRandomElements").addEventListener("keyup",GenerateNumbers);
+	document.getElementById("NumberOfRandomElements").addEventListener("mouseup",GenerateNumbers);	
+};
+
 
 var myArray = []
 var userX = 0 //myArray.length
@@ -6,7 +11,7 @@ var max = 10
 
 var howManyArray = [];
 
-function onClick(){
+function GenerateNumbers(){
 	myRndArray();
 	howManyMakeArray();
 	printArray();
@@ -25,7 +30,7 @@ function myRandom() {
 
 function myRndArray(){
 
-var userX = Math.round(prompt("Please enter the number of random numbers you'd like returned"));
+var userX = Math.round(document.getElementById("NumberOfRandomElements").value);
 	for (i=0; i < userX; i++){
 		myArray[i]=myRandom();
 	}

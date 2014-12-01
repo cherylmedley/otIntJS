@@ -54,21 +54,20 @@ for (i=min; i<(max+1); i++){
 };
 
 function printArray(){
-
-	var container = document.getElementById("arrayTableCont")
-	var table = document.createElement("table");
-	var tbody = document.createElement("tbody");
-	var row = document.createElement("tr");
+	document.getElementById("arrayContainer").innerHTML = buildArray().outerHTML;
+};
+function buildArray() {
+	//create elements
+	var list = document.createElement("ul");
+	list.className = "unstyled";
 	
-	for(i=0;i<myArray.length;i++){
-		var cell = document.createElement("td");
-		
-		cell.textContent = myArray[i];
-		row.appendChild(cell);
+	//build list
+	for(var i = 0; i < myArray.length; i++){
+		var listItem = document.createElement("li");
+		listItem.innerHTML = myArray[i];
+		list.appendChild(listItem);
 	}
-	tbody.appendChild(row);
-	table.appendChild(tbody);
-	container.appendChild(table);
+	return list;
 };
 
 

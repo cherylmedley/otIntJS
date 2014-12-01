@@ -13,7 +13,7 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 
 	//print array
 	printMyArray(myArray);
-	printArray(numberOfInstancesArray);
+	buildPrintArray(numberOfInstancesArray);
 	
 	//array statistics
 	even(numberOfInstancesArray);
@@ -79,38 +79,46 @@ function buildPrintMyArray(myArray){
 	return table;
 };
 
-function printArray(numberOfInstancesArray){
-	var container = document.getElementById("numTable");
+function buildPrintArray(numberOfInstancesArray){
+	//create elements
+	var howTable = document.getElementById("numTable");
 	var table = document.createElement("table");
 	var tbody = document.createElement("tbody");
 	var thead = document.createElement("thead");
 	var rowHead = document.createElement("tr");
 	var cellHead1 = document.createElement("th");
 	var cellHead2 = document.createElement("th");
+	
+	//build table header
 	cellHead1.textContent = "Number";
 	cellHead2.textContent = "How Many";
 	rowHead.appendChild(cellHead1);
 	rowHead.appendChild(cellHead2);
 	thead.appendChild(rowHead);
 	table.appendChild(thead);
-	container.appendChild(table);
+	howTable.appendChild(table);
+	
+	//build table body
 	for (i=min; i<max+1; i++){
 		var row = document.createElement("tr");
-		// create cellL
 		var cellL = document.createElement("td");
+		var cellR = document.createElement("td");
+		
+		// build first column
 		cellL.textContent = i;
 		row.appendChild(cellL);
-		//create cellR (integrate searching array function using a for loop based on userX)
-		var cellR = document.createElement("td");
+		
+		//build second column
 		cellR.textContent = numberOfInstancesArray[i-1];
 		row.appendChild(cellR);
+		
 		//attach row to tbody
 		tbody.appendChild(row);
 	}
 
 //attach tbody to table
 table.appendChild(tbody);
-container.appendChild(table);
+howTable.appendChild(table);
 };
 
 function even(){

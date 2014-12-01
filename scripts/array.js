@@ -1,7 +1,7 @@
 //add listeners on page load
 window.onload = function () {
 
-var myArray = []
+
 var userX = 0 //myArray.length. This is a prompted value for how many random numbers the user wants.
 var min = 1 //could be a user prompted value. The minimum value for a random number
 var max = 10 //could be a user prompted value. The maximum value for a random number
@@ -22,19 +22,29 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 	fewest(numberOfInstancesArray);
 };
 
-function myRandom() {
+function GenerateNumbers (){
+	var myArray = getRandomArray (); //gathers random numbers	
+	
+	//build array with count of instances
+	var numberOfInstancesArray = getArrayWithNumberOfInstances(myArray);
+
+};
+
+
+function getRandomArray(numberOfRandom){
+	var myArray = [];
+	
+	numberOfRandom = Math.round(numberOfRandom);
+	for (var i = 0; i < numberOfRandom; i++){
+		myArray[i]=getRandomNumber();
+	}
+};
+
+function getRandomNumber() {
     var rnd = Math.random() * max;
 	var fin = Math.floor((rnd)+1);
 	return fin
 }
-
-function myRndArray(){
-
-var userX = Math.round(prompt("Please enter the number of random numbers you'd like returned"));
-	for (i=0; i < userX; i++){
-		myArray[i]=myRandom();
-	}
-};
 
 function getArrayWithNumberOfInstances(min, max, myArray){
 	var numberOfInstancesArray = [];

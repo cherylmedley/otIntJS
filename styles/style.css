@@ -1,3 +1,7 @@
+label{
+	font-weight: bold;
+}
+
 ul.unstyled{
 	list-style: none
 	padding-left: 0;
@@ -16,15 +20,15 @@ table{
 
 }
 
-th,td{
-	padding: 10px;
-	border-right:solid;
-}
-
 thead{
 	border: solid;
 	vertical-align:bottom;
 	font-size:14pt;
+}
+
+th,td{
+	padding: 10px;
+	border-right:solid;
 }
 
 td{

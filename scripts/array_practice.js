@@ -1,14 +1,17 @@
 //add listeners on page load
 window.onload = function () {
 	document.getElementById("NumberOfRandomElements").addEventListener("keyup",GenerateNumbers);
-	document.getElementById("NumberOfRandomElements").addEventListener("mouseup",GenerateNumbers);
+	document.getElementById("NumberOfRandomElements").addEventListener("mouseup",GenerateNumbers);	document.getElementById("MinValue").addEventListener("keyup",GenerateNumbers);
+	document.getElementById("MinValue").addEventListener("mouseup",GenerateNumbers);	
+	document.getElementById("MaxValue").addEventListener("keyup",GenerateNumbers);
+	document.getElementById("MaxValue").addEventListener("mouseup",GenerateNumbers);
 
 };
 
 function GenerateNumbers (){
 	var myArray = getRandomArray (this.value); //gathers random numbers	based on numberOfRandom from user
-	var min = 1 //could be a user prompted value. The minimum value for a random number
-	var max = 10 //could be a user prompted value. The maximum value for a random number
+	var min = MinValue
+	var max = MaxValue
 	
 	//build array with count of instances
 	var numberOfInstancesArray = getArrayWithNumberOfInstances(min, max, myArray);

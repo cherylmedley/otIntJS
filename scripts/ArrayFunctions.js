@@ -15,7 +15,7 @@ function getArrayWithNumberOfInstances(min, max, myArray){
 	//add number and count to array using objects instead of complicated position array silliness	
 	numberOfInstancesArray.push({
 		number: i,
-		instances: numberOfInstances;
+		instances: numberOfInstances
 	});
 	}
 	return numberOfInstancesArray;

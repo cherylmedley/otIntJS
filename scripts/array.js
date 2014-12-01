@@ -6,9 +6,15 @@ var userX = 0 //myArray.length. This is a prompted value for how many random num
 var min = 1 //could be a user prompted value. The minimum value for a random number
 var max = 10 //could be a user prompted value. The maximum value for a random number
 
-//pull all the methods together to build the array and print it
-var howManyArray = howManyMakeArray(min, max, myArray);
+//pull all the methods together
+
+	//build array
+	var howManyArray = howManyMakeArray(min, max, myArray);
+
+	//print array
 	printArray(myArray, howManyArray);
+	
+	//array statistics
 	even(howManyArray);
 	odd(howManyArray);
 	most(howManyArray);

@@ -1,22 +1,18 @@
 //add listeners on page load
 window.onload = function () {
-}
+
 var myArray = []
-var userX = 0 //myArray.length
-var min = 1
-var max = 10
+var userX = 0 //myArray.length. This is a prompted value for how many random numbers the user wants.
+var min = 1 //could be a user prompted value. The minimum value for a random number
+var max = 10 //could be a user prompted value. The maximum value for a random number
 
-var howManyArray = [];
-
-function onClick(){
-	myRndArray();
-	howManyMakeArray();
-	printArray();
-	howManyEachPrint();
-	even();
-	odd();
-	most();
-	fewest();
+//build array
+var howManyArray = howManyMakeArray(min, max, myArray);
+	printArray(myArray, howManyArray);
+	even(howManyArray);
+	odd(howManyArray);
+	most(howManyArray);
+	fewest(howManyArray);
 };
 
 function myRandom() {

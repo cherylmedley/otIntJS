@@ -57,8 +57,13 @@ function getArrayWithNumberOfInstances(min, max, myArray){
 function printMyArray(myArray){
 
 	var container = document.getElementById("arrayTableContainer")
+	var table = buildPrintMyArray(myArray);
+	container.appendChild(table);
+}
+
+function buildPrintMyArray(myArray){
+	//create elements
 	var table = document.createElement("table");
-	
 	var tbody = document.createElement("tbody");
 	var row = document.createElement("tr");
 	for(i=0;i<myArray.length;i++){
@@ -66,9 +71,12 @@ function printMyArray(myArray){
 		cell.textContent = myArray[i];
 		row.appendChild(cell);
 	}
+	
+	//add elements to the page
 	tbody.appendChild(row);
 	table.appendChild(tbody);
-	container.appendChild(table);
+	
+	return table;
 };
 
 function printArray(numberOfInstancesArray){

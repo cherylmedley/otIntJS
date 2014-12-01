@@ -1,0 +1,26 @@
+#array-table{
+border-style: hidden
+}
+
+table{
+	text-align: center;
+	vertical-align:middle;
+	border: solid;
+	border-collapse: collapse;
+
+}
+
+th,td{
+	padding: 10px;
+	border-right:solid;
+}
+
+thead{
+	border: solid;
+	vertical-align:bottom;
+	font-size:14pt;
+}
+
+td{
+	border-bottom: solid thin;
+}

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="array.js"></script>
-
+	<title>JavaScript Interview Questions</title>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
+
 <body>
 
 
@@ -12,29 +12,30 @@
 
 <p>I'm learning JavaScript by answering the OpenTempo interview problems.</p>
 <ol>
-<li>Fill an array with random numbers between 1 and 10, allowing the user to select how many random numbers they&#8217;d like to generate.</li>		
-<li>Then write a program to find out how many of each number are in the array and display the results to the user.</li>	
-<li>Provide the additional statistics for the number with the most instances, the fewest instances and the number of even and odd numbers generated.</li>
+	<li>Fill an array with random numbers between 1 and 10, allowing the user to select how many random numbers they&#8217;d like to generate.</li>		
+	<li>Then write a program to find out how many of each number are in the array and display the results to the user.</li>	
+	<li>Provide the additional statistics for the number with the most instances, the fewest instances and the number of even and odd numbers generated.</li>
 </ol>
+
+
 
 <button onclick="onClick()">Click here to enter how many random numbers you'd like to create.</button>
 <h2>Random Number Array</h2>
 <div id="arrayTableCont">
 </div>
+
 <h2>How many of each number are in the array:</h2>
-<div id="numTable">
-
-</div>
-
+<div id="numTable"></div>
 
 <h2>Additional Statistics:</h2>
+
 <table id="stats">
-<thead>
-	<tr>
-		<th>Statistic</th>
-		<th>How Many</th>
-	</tr>
-</thead>
+	<thead>
+		<tr>
+			<th>Statistic</th>
+			<th>How Many</th>
+		</tr>
+	</thead>
 	<tr>
 		<td>Most Instances</td>
 		<td id="most"></td>
@@ -52,8 +53,8 @@
 		<td id="odd"></td>
 	</tr>
 </table>
-<p id="evens"></p>
-<p id="odds"></p>
+
+<script src="scripts/array_practice.js"></script>
 
 </body>
 </html>

@@ -9,7 +9,7 @@ var max = 10 //could be a user prompted value. The maximum value for a random nu
 //pull all the methods together
 
 	//build array
-	var howManyArray = howManyMakeArray(min, max, myArray);
+	var howManyArray = getArrayWithNumberOfInstances(min, max, myArray);
 
 	//print array
 	printMyArray(myArray);
@@ -36,28 +36,29 @@ var userX = Math.round(prompt("Please enter the number of random numbers you'd l
 	}
 };
 
-function howManyMakeArray(min, max, myArray){
+function getArrayWithNumberOfInstances(min, max, myArray){
 	var howManyArray = [];
 	
-	//check the array from the lowest possible value to the highest possible value
+	//check the array for instances of the lowest possible value to the highest possible value
 	for (var i = min; i <= max; i++){
-		var howManyTimesDoesTheValueOccur = 0;
+		var numberOfInstances = 0;
 		
 		//cycle through each position j in the array to check for the value i
 		for (var j = 0; j < myArray.length; j++){
 			if (myArray[j] === i){
-			howManyTimesDoesTheValueOccur += 1;
+			 numberOfInstances += 1;
 			}
 		}
-	howManyArray[i-1]=howManyTimesDoesTheValueOccur;
+	howManyArray[i-1]= numberOfInstances;
 	}
 	return howManyArray;
 };
 
-function printArray(){
+function printMyArray(myArray){
 
 	var container = document.getElementById("arrayTableCont")
 	var table = document.createElement("table");
+	
 	var tbody = document.createElement("tbody");
 	var row = document.createElement("tr");
 	for(i=0;i<myArray.length;i++){
@@ -70,7 +71,7 @@ function printArray(){
 	container.appendChild(table);
 };
 
-function howManyEachPrint(){
+function printArray(howManyArray){
 	var container = document.getElementById("numTable");
 	var table = document.createElement("table");
 	var tbody = document.createElement("tbody");

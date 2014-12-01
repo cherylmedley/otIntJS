@@ -1,4 +1,6 @@
-
+//add listeners on page load
+window.onload = function () {
+}
 var myArray = []
 var userX = 0 //myArray.length
 var min = 1
